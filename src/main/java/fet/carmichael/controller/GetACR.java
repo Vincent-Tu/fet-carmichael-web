@@ -20,7 +20,7 @@ public class GetACR {
 		try {
 			properties.load(getClass().getResourceAsStream("/application.properties"));
 			String clientId = properties.getProperty("clientId");
-			String url = "otp/" +msisdn + "/getACR?client_id=" + clientId + "&networkStatus=" + networkStatus;
+			String url = "users/" +msisdn + "/getACR?client_id=" + clientId + "&networkStatus=" + networkStatus;
 		
 			new HttpClientUtils().sslWithGet(url, map);
 			
@@ -36,6 +36,7 @@ public class GetACR {
 				result = jasonObject.get("code").toString();
 				if("0".equals(result)){
 					uid = jasonObject.get("uid").toString();
+					result = "OK";
 				}
 				userMessage = jasonObject.get("message").toString();
 			} else {

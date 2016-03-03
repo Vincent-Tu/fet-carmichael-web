@@ -29,7 +29,7 @@ public class WebInit implements WebApplicationInitializer{
         servletContext.addServlet("h2Console", new WebServlet()).addMapping("/console/*");
         ServletRegistration.Dynamic appServlet = servletContext.addServlet("app", new DispatcherServlet(webContext()));
         appServlet.setLoadOnStartup(1);
-        appServlet.addMapping("*.do","/carmichael/*");
+        appServlet.addMapping("*.do","/npp/*");
     }
 
     private WebApplicationContext appContext() {

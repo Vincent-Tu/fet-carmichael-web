@@ -22,7 +22,7 @@ public class GetMSISDN {
 		try {
 			properties.load(getClass().getResourceAsStream("/application.properties"));
 			String clientId = properties.getProperty("clientId");
-			String url = "users/" + uid + "/msisdn?networkStatus=" + networkStatus + "&client_id="+clientId;
+			String url = "users/" + uid + "/msisdn?client_id="+clientId+"&networkStatus=" + networkStatus;
 			
 			new HttpClientUtils().sslWithGet(url, map);
 
@@ -38,6 +38,7 @@ public class GetMSISDN {
 				result = jasonObject.get("code").toString();
 				if("0".equals(result)){
 					msisdn = jasonObject.get("msisdn").toString();
+					result = "OK";
 				}
 				userMessage = jasonObject.get("message").toString();
 			} else {

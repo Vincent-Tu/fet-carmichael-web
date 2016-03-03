@@ -15,8 +15,8 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="list-group">
-                        <a href="carmichael/history" class="list-group-item active">History</a>
-                        <a href="carmichael/manualTesting" class="list-group-item">Manual Testing</a>
+                        <a href="npp/history" class="list-group-item active">History</a>
+                        <a href="npp/manualTesting" class="list-group-item">Manual Testing</a>
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -78,15 +78,15 @@
 	                            <nav>
 	                                <ul class="pagination">
 	                                    <li <c:if test="${disablePrevious}">class="disabled"</c:if>>
-	                                        <a <c:if test="${!disablePrevious}">href="carmichael/history/testResultList/${msisdn}/${requestid}/${uid}/${creationTimeFrom}/${creationTimeTo}/${begin - 1}"</c:if> aria-label="Previous" id="pagePrevious">
+	                                        <a <c:if test="${!disablePrevious}">href="npp/history/testResultList/${msisdn}/${requestid}/${uid}/${creationTimeFrom}/${creationTimeTo}/${begin - 1}"</c:if> aria-label="Previous" id="pagePrevious">
 	                                            <span aria-hidden="true">&laquo;</span>
 	                                        </a>
 	                                    </li>
 	                                    <c:forEach var="i" begin="${begin}" end="${end}" step="1">
-	                                        <li <c:if test="${i == clickPage}">class="active"</c:if>><a href="carmichael/history/testResultList/${msisdn}/${requestid}/${uid}/${creationTimeFrom}/${creationTimeTo}/${i}">${i}</a></li>
+	                                        <li <c:if test="${i == clickPage}">class="active"</c:if>><a href="npp/history/testResultList/${msisdn}/${requestid}/${uid}/${creationTimeFrom}/${creationTimeTo}/${i}">${i}</a></li>
 	                                        </c:forEach>
 	                                    <li <c:if test="${disableNext}">class="disabled"</c:if>>
-	                                        <a <c:if test="${!disableNext}">href="carmichael/history/testResultList/${msisdn}/${requestid}/${uid}/${creationTimeFrom}/${creationTimeTo}/${end + 1}"</c:if> aria-label="Next" id="pageNext">
+	                                        <a <c:if test="${!disableNext}">href="npp/history/testResultList/${msisdn}/${requestid}/${uid}/${creationTimeFrom}/${creationTimeTo}/${end + 1}"</c:if> aria-label="Next" id="pageNext">
 	                                            <span aria-hidden="true">&raquo;</span>
 	                                        </a>
 	                                    </li>
@@ -123,7 +123,7 @@
 	                                            ${historyList.creationTime}
 	                                        </td>
 	                                        <td>
-	                                            <a href="carmichael/history/testResultDetails/${historyList.correlationId}">Test Result</a>
+	                                            <a href="npp/history/testResultDetails/${historyList.correlationId}">Test Result</a>
 	                                        </td>
 	                                    </tr>
 	                                </c:forEach>
@@ -131,15 +131,15 @@
 	                            <nav>
 	                                <ul class="pagination">
 	                                    <li <c:if test="${disablePrevious}">class="disabled"</c:if>>
-	                                        <a <c:if test="${!disablePrevious}">href="carmichael/history/testResultList/${msisdn}/${requestid}/${uid}/${creationTimeFrom}/${creationTimeTo}/${begin - 1}"</c:if> aria-label="Previous" id="pagePrevious">
+	                                        <a <c:if test="${!disablePrevious}">href="npp/history/testResultList/${msisdn}/${requestid}/${uid}/${creationTimeFrom}/${creationTimeTo}/${begin - 1}"</c:if> aria-label="Previous" id="pagePrevious">
 	                                            <span aria-hidden="true">&laquo;</span>
 	                                        </a>
 	                                    </li>
 	                                    <c:forEach var="i" begin="${begin}" end="${end}" step="1">
-	                                        <li <c:if test="${i == clickPage}">class="active"</c:if>><a href="carmichael/history/testResultList/${msisdn}/${requestid}/${uid}/${creationTimeFrom}/${creationTimeTo}/${i}">${i}</a></li>
+	                                        <li <c:if test="${i == clickPage}">class="active"</c:if>><a href="npp/history/testResultList/${msisdn}/${requestid}/${uid}/${creationTimeFrom}/${creationTimeTo}/${i}">${i}</a></li>
 	                                        </c:forEach>
 	                                    <li <c:if test="${disableNext}">class="disabled"</c:if>>
-	                                        <a <c:if test="${!disableNext}">href="carmichael/history/testResultList/${msisdn}/${requestid}/${uid}/${creationTimeFrom}/${creationTimeTo}/${end + 1}"</c:if> aria-label="Next" id="pageNext">
+	                                        <a <c:if test="${!disableNext}">href="npp/history/testResultList/${msisdn}/${requestid}/${uid}/${creationTimeFrom}/${creationTimeTo}/${end + 1}"</c:if> aria-label="Next" id="pageNext">
 	                                            <span aria-hidden="true">&raquo;</span>
 	                                        </a>
 	                                    </li>
@@ -180,7 +180,7 @@
             var creationTimeFrom = !$("#creationTimeFrom").val() ? 0 : $("#creationTimeFrom").val();
             var creationTimeTo = !$("#creationTimeTo").val() ? 0 : $("#creationTimeTo").val();
             var projectName = window.location.pathname.split('/')[1];
-            window.location.href = "http://"+window.location.host+"/"+projectName+"/carmichael/history/testResultList/" + msisdn +'/' + requestid +'/' + uid + '/' + creationTimeFrom + '/'+ creationTimeTo+'/1';
+            window.location.href = "http://"+window.location.host+"/"+projectName+"/npp/history/testResultList/" + msisdn +'/' + requestid +'/' + uid + '/' + creationTimeFrom + '/'+ creationTimeTo+'/1';
         });
     </script>
 </html>

@@ -44,7 +44,7 @@ public class GreetingController {
 	@RequestMapping(value = { "/home", "/history" })
 	public String index() {
 		final String defaultPage = "1";
-		return "redirect:/carmichael/history/testResultList/0/0/0/0/0/" + defaultPage;
+		return "redirect:/npp/history/testResultList/0/0/0/0/0/" + defaultPage;
 	}
 
 	@RequestMapping(value = {
@@ -141,7 +141,7 @@ public class GreetingController {
 			break;
 		}
 		
-		return String.format("carmichael/history/testResultDetails/%s", correlationId);
+		return String.format("npp/history/testResultDetails/%s", correlationId);
 	}
 
 	@RequestMapping("/manualTesting")

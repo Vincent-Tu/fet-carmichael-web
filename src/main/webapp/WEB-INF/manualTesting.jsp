@@ -23,8 +23,8 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="list-group">
-                    <a href="carmichael/history" class="list-group-item">History</a> 
-                    <a href="carmichael/manualTesting" class="list-group-item active">Manual Testing</a>
+                    <a href="npp/history" class="list-group-item">History</a> 
+                    <a href="npp/manualTesting" class="list-group-item active">Manual Testing</a>
                 </div>
             </div>
             <div class="col-md-9">
@@ -273,7 +273,7 @@
                 $runManualTestBtn.button('loading');
                 $.ajax({
                     type: 'POST',
-                    url: 'carmichael/runManualTest',
+                    url: 'npp/runManualTest',
                     data: $manualTestingForm.serializeArray(),
                     success: function(response) {
                     	redirect(response);

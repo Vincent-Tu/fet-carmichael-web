@@ -38,7 +38,7 @@ public class NetworkLookup {
 			properties.load(getClass().getResourceAsStream("/application.properties"));
 			String clientId = properties.getProperty("clientId");
 			String request = "<NetworkLookupRequest><msisdn>" + msisdn + "</msisdn></NetworkLookupRequest>";
-			String url = "otp/" + "networkLookup?client_id=" + clientId + "&networkStatus=" + networkStatus;
+			String url = "networkLookup?client_id=" + clientId;
 			
 			HttpEntity requestEntity = new ByteArrayEntity(request.getBytes("UTF-8"));
 			

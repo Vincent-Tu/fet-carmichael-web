@@ -47,13 +47,14 @@ public class InternalDBStore {
 		}
 	}
 	
-	public void saveTestCaseForSendPIN(final String correlationId, final String api_radio, final String message) {
+	public void saveTestCaseForSendPIN(final String correlationId, final String api_radio, final String msisdn, final String message) {
 		if (StringUtils.isNotEmpty(api_radio)) {
-			final String sql = "insert into TESTCASE_HISTORY(CORRELATION_ID, API_RADIO, MESSAGE) values(:CORRELATION_ID, :API_RADIO, :MESSAGE)";
+			final String sql = "insert into TESTCASE_HISTORY(CORRELATION_ID, API_RADIO, MSISDN, MESSAGE) values(:CORRELATION_ID, :API_RADIO, :MSISDN, :MESSAGE)";
 
 			final MapSqlParameterSource parameters = new MapSqlParameterSource()
 					.addValue("CORRELATION_ID", correlationId)
 					.addValue("API_RADIO", api_radio)
+					.addValue("MSISDN", msisdn)
 					.addValue("MESSAGE", message);
 			log.info("sql:[{}],parameters:[{}]", sql, parameters.getValues());
 			namedParameterJdbcTemplateForH2.update(sql, parameters);
